@@ -5,10 +5,6 @@ function TimeCalculator () {
     if (start == 1) {
         temps += 1
         basic.pause(1000)
-        if (temps == 5) {
-            temps = 0
-            ColorGestion()
-        }
     }
 }
 function ColorGestion () {
@@ -46,8 +42,8 @@ let couleur = 0
 let Multicolor: neopixel.Strip = null
 let led2 = 0
 let start = 0
+let ShowerTime = 15
 let temps = 0
-temps = 0
 start = 0
 led2 = 0
 Multicolor = neopixel.create(DigitalPin.P2, 30, NeoPixelMode.RGB)
@@ -57,13 +53,20 @@ for (let index = 0; index < 30; index++) {
 }
 led2 = 0
 couleur = neopixel.rgb(0, 255, 0)
+serial.writeLine("entrer le shower time")
 basic.forever(function () {
     eau = pins.analogReadPin(AnalogPin.P0)
     if (eau <= 450) {
         start = 1
+        if (temps == ShowerTime / 30) {
+            temps = 0
+            ColorGestion()
+        }
     } else {
         start = 0
         basic.showNumber(eau)
     }
+})
+basic.forever(function () {
     TimeCalculator()
 })
