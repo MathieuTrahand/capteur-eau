@@ -12,7 +12,12 @@ input.onButtonPressed(Button.B, function () {
     ))
 })
 let Multicolor: neopixel.Strip = null
+let temps = 0
+let start = 0
 Multicolor = neopixel.create(DigitalPin.P2, 30, NeoPixelMode.RGB)
 basic.forever(function () {
-	
+    if (start == 1) {
+        temps += 1
+        basic.pause(1000)
+    }
 })
