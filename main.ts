@@ -5,7 +5,7 @@ function TimeCalculator () {
     if (start == 1) {
         temps += 1
         basic.pause(1000)
-        if (temps == 1) {
+        if (temps == 5) {
             temps = 0
             ColorGestion()
         }
