@@ -9,9 +9,9 @@ function TimeCalculator () {
 }
 function LedFlashing () {
     while (true) {
-        range.showColor(neopixel.rgb(255, 0, 0))
+        range2.showColor(neopixel.rgb(255, 0, 0))
         basic.pause(1000)
-        range.showColor(neopixel.rgb(0, 0, 0))
+        range2.showColor(neopixel.rgb(0, 0, 0))
         basic.pause(1000)
     }
 }
@@ -49,25 +49,25 @@ function ColorGestion () {
     }
 }
 let eau = 0
+let temps = 0
 let couleur = 0
-let range: neopixel.Strip = null
+let range2: neopixel.Strip = null
 let Multicolor: neopixel.Strip = null
 let led2 = 0
 let start = 0
 let ShowerTime = 900
-let temps = 0
 start = 0
 led2 = 0
 Multicolor = neopixel.create(DigitalPin.P2, 30, NeoPixelMode.RGB)
-range = Multicolor.range(0, 30)
-range.showColor(neopixel.rgb(0, 0, 0))
+range2 = Multicolor.range(0, 30)
+range2.showColor(neopixel.rgb(0, 0, 0))
 led2 = 0
 couleur = neopixel.rgb(0, 255, 0)
 basic.forever(function () {
     eau = pins.analogReadPin(AnalogPin.P0)
     if (eau <= 450) {
         start = 1
-        if (temps == 1) {
+        if (temps == 3) {
             temps = 0
             ColorGestion()
         }
