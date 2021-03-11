@@ -8,11 +8,7 @@ function TimeToShow () {
 }
 function EndFonction () {
     _4digit.show(8888)
-    music.playMelody("G G G G G G G G ", 120)
-    basic.pause(100)
-    _4digit.clear()
-    music.stopAllSounds()
-    basic.pause(100)
+    music.playMelody("G A G A G A G A ", 500)
 }
 function TimeCalculator () {
     if (start == 1) {
@@ -27,11 +23,11 @@ let _4digit: grove.TM1637 = null
 let start = 0
 let ShowerTime = 900
 start = 0
-ShowerTime = 15
+ShowerTime = 5
 _4digit = grove.createDisplay(DigitalPin.P2, DigitalPin.P16)
 Time = ShowerTime
 basic.forever(function () {
-    eau = pins.analogReadPin(AnalogPin.P0)
+    eau = pins.analogReadPin(AnalogPin.P1)
     if (eau <= 450) {
         start = 1
         if (temps == 1) {
