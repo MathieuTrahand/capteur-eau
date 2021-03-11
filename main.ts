@@ -8,7 +8,7 @@ function TimeCalculator () {
     }
 }
 function LedFlashing () {
-    while (true) {
+    while (eau <= 450) {
         range2.showColor(neopixel.rgb(255, 0, 0))
         basic.pause(1000)
         range2.showColor(neopixel.rgb(0, 0, 0))
@@ -19,7 +19,6 @@ function ColorGestion () {
     Multicolor.setPixelColor(led2, couleur)
     Multicolor.show()
     led2 += 1
-    basic.showNumber(led2)
     if (led2 == 3) {
         couleur = neopixel.rgb(51, 204, 0)
     }
@@ -67,7 +66,7 @@ basic.forever(function () {
     eau = pins.analogReadPin(AnalogPin.P0)
     if (eau <= 450) {
         start = 1
-        if (temps == 3) {
+        if (temps == 1) {
             temps = 0
             ColorGestion()
         }
