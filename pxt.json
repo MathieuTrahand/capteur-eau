@@ -1,5 +1,5 @@
 {
-    "name": "test capteur eau",
+    "name": "capteur eau sans ruban",
     "description": "",
     "dependencies": {
         "core": "*",
