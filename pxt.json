@@ -1,5 +1,5 @@
 {
-    "name": "test capteur eau",
+    "name": "capteur eau timer",
     "description": "",
     "dependencies": {
         "core": "*",
@@ -17,6 +17,10 @@
     "testFiles": [
         "test.ts"
     ],
+    "targetVersions": {
+        "target": "3.1.58",
+        "targetId": "microbit"
+    },
     "supportedTargets": [
         "microbit"
     ],
