@@ -1,5 +1,5 @@
 input.onButtonPressed(Button.A, function () {
-    Multicolor.showRainbow(350, 127)
+    blockytalky.sendNumber("A", 10)
 })
 function TimeCalculator () {
     if (start == 1) {
@@ -7,6 +7,12 @@ function TimeCalculator () {
         basic.pause(1000)
     }
 }
+blockytalky.onReceivedString(function (key, receivedString) {
+	
+})
+input.onButtonPressed(Button.B, function () {
+    blockytalky.sendNumber("B", 20)
+})
 function LedFlashing () {
     while (true) {
         range.showColor(neopixel.rgb(255, 0, 0))
