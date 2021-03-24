@@ -1,5 +1,5 @@
 {
-    "name": "test capteur eau",
+    "name": "neopixel and water",
     "description": "",
     "dependencies": {
         "core": "*",
@@ -17,6 +17,10 @@
     "testFiles": [
         "test.ts"
     ],
+    "targetVersions": {
+        "target": "3.1.62",
+        "targetId": "microbit"
+    },
     "supportedTargets": [
         "microbit"
     ],
