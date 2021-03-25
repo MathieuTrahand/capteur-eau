@@ -69,7 +69,6 @@ range = Multicolor.range(0, 30)
 range.showColor(neopixel.rgb(0, 0, 0))
 led2 = 0
 couleur = neopixel.rgb(0, 255, 0)
-serial.writeLine("entrez le shower time")
 basic.forever(function () {
     eau = pins.analogReadPin(AnalogPin.P0)
     if (eau <= 450) {
