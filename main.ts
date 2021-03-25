@@ -25,7 +25,6 @@ function ColorGestion () {
     Multicolor.setPixelColor(led2, couleur)
     Multicolor.show()
     led2 += 1
-    basic.showNumber(led2)
     if (led2 == 3) {
         couleur = neopixel.rgb(51, 204, 0)
     }
@@ -79,7 +78,6 @@ basic.forever(function () {
         }
     } else {
         start = 0
-        basic.showNumber(eau)
     }
 })
 basic.forever(function () {
