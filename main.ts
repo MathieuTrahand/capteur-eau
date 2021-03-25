@@ -6,6 +6,12 @@ function TimeToShow () {
         EndFonction()
     }
 }
+bluetooth.onBluetoothConnected(function () {
+	
+})
+bluetooth.onBluetoothDisconnected(function () {
+	
+})
 function EndFonction () {
     _4digit.show(8888)
     music.playMelody("G A G A G A G A ", 500)
@@ -36,7 +42,6 @@ basic.forever(function () {
         }
     } else {
         start = 0
-        basic.showNumber(eau)
     }
 })
 basic.forever(function () {
