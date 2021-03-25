@@ -14,7 +14,7 @@ input.onButtonPressed(Button.B, function () {
     blockytalky.sendNumber("B", 20)
 })
 function LedFlashing () {
-    while (true) {
+    while (eau <= 450) {
         range.showColor(neopixel.rgb(255, 0, 0))
         basic.pause(1000)
         range.showColor(neopixel.rgb(0, 0, 0))
