@@ -73,7 +73,7 @@ basic.forever(function () {
     eau = pins.analogReadPin(AnalogPin.P0)
     if (eau <= 450) {
         start = 1
-        if (temps == ShowerTime / 30) {
+        if (temps == 3) {
             temps = 0
             ColorGestion()
         }
