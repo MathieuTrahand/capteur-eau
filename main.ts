@@ -6,6 +6,11 @@ function TimeToShow () {
         EndFonction()
     }
 }
+blockytalky.onReceivedNumber(function (key, value) {
+    if (key == "TimeToChange") {
+        Time = value
+    }
+})
 function EndFonction () {
     _4digit.show(8888)
     music.playMelody("G A G A G A G A ", 500)
@@ -16,6 +21,9 @@ function TimeCalculator () {
         basic.pause(1000)
     }
 }
+blockytalky.onReceivedString(function (key, receivedString) {
+	
+})
 let eau = 0
 let temps = 0
 let Time = 0

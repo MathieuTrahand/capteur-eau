@@ -3,12 +3,11 @@
     "description": "",
     "dependencies": {
         "core": "*",
-        "radio": "*",
         "microphone": "*",
         "pxt-grove-zero-for-microbit": "github:seeed-studio/pxt-grove-zero-for-microbit#1.0.4",
-        "neopixel": "github:microsoft/pxt-neopixel#v0.7.3",
-        "radio-broadcast": "*",
-        "Grove": "github:seeed-studio/pxt-grove#v0.5.0"
+        "Grove": "github:seeed-studio/pxt-grove#v0.5.0",
+        "bluetooth": "*",
+        "BlockyTalky-BLE": "github:laboratoryforplayfulcomputation/pxt-blockytalkyble#v0.0.21"
     },
     "files": [
         "main.blocks",
@@ -19,6 +18,10 @@
     "testFiles": [
         "test.ts"
     ],
+    "targetVersions": {
+        "target": "3.1.79",
+        "targetId": "microbit"
+    },
     "supportedTargets": [
         "microbit"
     ],
