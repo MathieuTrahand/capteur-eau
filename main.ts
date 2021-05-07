@@ -2,15 +2,29 @@ function TimeToShow () {
     if (Time > 0) {
         Time = Time - 1
         _4digit.show(Time)
+        blockytalky.sendNumber("Time", Time)
     } else {
         EndFonction()
     }
 }
+blockytalky.onReceivedNumber(function (key, value) {
+    if (key == "TimeToChange") {
+        Time = value
+    } else if (key == "Stop") {
+        if (value == 1) {
+            Stop = 1
+        }
+    } else if (false) {
+    	
+    } else {
+    	
+    }
+})
 bluetooth.onBluetoothConnected(function () {
-	
+    basic.showString("C")
 })
 bluetooth.onBluetoothDisconnected(function () {
-	
+    basic.showString("D")
 })
 function EndFonction () {
     _4digit.show(8888)
@@ -22,26 +36,32 @@ function TimeCalculator () {
         basic.pause(1000)
     }
 }
+blockytalky.onReceivedString(function (key, receivedString) {
+	
+})
 let eau = 0
 let temps = 0
 let Time = 0
 let _4digit: grove.TM1637 = null
 let start = 0
-let ShowerTime = 900
+let Stop = 0
+Stop = 0
 start = 0
-ShowerTime = 5
+let ShowerTime = 900
 _4digit = grove.createDisplay(DigitalPin.P2, DigitalPin.P16)
 Time = ShowerTime
 basic.forever(function () {
-    eau = pins.analogReadPin(AnalogPin.P1)
-    if (eau <= 450) {
-        start = 1
-        if (temps == 1) {
-            temps = 0
-            TimeToShow()
+    if (Stop != 1) {
+        eau = pins.analogReadPin(AnalogPin.P1)
+        if (eau <= 450) {
+            start = 1
+            if (temps == 1) {
+                temps = 0
+                TimeToShow()
+            }
+        } else {
+            start = 0
         }
-    } else {
-        start = 0
     }
 })
 basic.forever(function () {
