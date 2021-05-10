@@ -2,6 +2,7 @@ function TimeToShow () {
     if (Time > 0) {
         Time = Time - 1
         _4digit.show(Time)
+        blockytalky.sendNumber("Time", Time)
     } else {
         EndFonction()
     }
@@ -11,7 +12,6 @@ blockytalky.onReceivedNumber(function (key, value) {
         Time = value
     } else if (key == "Stop") {
         if (value == 1) {
-            blockytalky.sendNumber("Time", Time)
             Stop = 1
         }
     }
